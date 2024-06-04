@@ -1,15 +1,20 @@
-import sharingan from '../src/assets/sharingan.png'
-import './App.css';
+import "./App.css";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
+import Launcher from "./components/Launcher";
+import Home from "./components/home";
+import { darkTheme, lightTheme } from "./utils/theme";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={sharingan} className="App-logo" alt="logo" />
-        <p>
-          Sono Sharingan
-        </p>
-      </header>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <Routes>
+          <Route path="/" element={<Launcher />} />
+          <Route path="/platform" element={<Home />} />
+        </Routes>
+      </ThemeProvider>
     </div>
   );
 }
