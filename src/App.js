@@ -5,6 +5,7 @@ import Launcher from "./components/Launcher";
 import Home from "./components/home";
 import { darkTheme, lightTheme } from "./utils/theme";
 import Zoom from "./components/zoom";
+import Yt from "./components/ytref";
 // import Application from "./test";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<Launcher />} /> */}
         <Route path="/" element={<Home />} />
+        <Route path="/yt" element={<Yt />} />
         <Route path="/zoom" element={<Zoom />} />
         {/* <Route path="/test" element={Application} /> */}
       </Routes>

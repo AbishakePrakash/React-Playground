@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #d2dce1;
+}
+
+nav {
+  width: 100%;
+  height: 6.7vh;
+  background: #22262a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Source Sans Pro";
+  position: fixed;
+  font-size: 1.8vh;
+  padding: 0 5vh;
+  transition: 0.3s all;
+  z-index: 10;
+}
+nav.hide {
+  transform: translateY(-6.7vh);
+}
+nav > a > img {
+  background: #fff;
+  object-fit: contain;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+}
+
+nav > p {
+  display: none;
+}
+
+nav > ul {
+  display: flex;
+}
+
+nav > ul > li {
+  list-style: none;
+  cursor: default;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 3vh;
+  opacity: 0.7;
+  transition: 0.3s all;
+}
+
+nav > ul > li:first-of-type > a {
+  margin-left: 0;
+}
+
+nav > ul > li > a:hover {
+  opacity: 1;
+  color: #00aaff;
+}
+
+nav > ul > li > a.active {
+  opacity: 1;
+  background: hsl(210, 100%, 60%);
+  padding: 1vh 2vh;
+  color: #000;
+  font-weight: bold;
+  border-radius: 1vh;
+  border-bottom: 0.4vh solid hsl(210, 60%, 45%);
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    font-size: 3.5vw;
+    height: 10vw;
+    padding: 0 5vw;
+  }
+
+  nav.hide {
+    height: 0;
+    transform: none;
+  }
+
+  nav.hide > a > img,
+  nav.hide > p {
+    transition: 0.3s all;
+    transform: translateY(-10vw);
+  }
+
+  nav > a > img {
+    width: 8vw;
+    height: 8vw;
+  }
+
+  nav > p {
+    display: initial;
+    color: #fff;
+    cursor: default;
+  }
+
+  nav > ul {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #22262a;
+    justify-content: space-evenly;
+    height: 12vw;
+    align-items: center;
+  }
+
+  nav > ul > li > a {
+    margin: 0;
+  }
+
+  nav > ul > li > a.active {
+    border-radius: 2vw;
+    padding: 1.5vw 3vw;
+  }
+}
